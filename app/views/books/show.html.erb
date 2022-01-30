@@ -4,7 +4,7 @@
       <%= render'books/list',user:@user,book:@new_book %>
     </div>
     <div class="col-md-8 offset-md-1">
-      <h2>Books detail</h2>
+      <h2>Book detail</h2>
       <table class="table table-hover table-inverse">
          <tbody>
            <tr>
@@ -16,9 +16,10 @@
              </td>   
              <td><%= link_to @book.title, book_path(@book.id) %></td>
              <td><%= @book.body %></td>
+             <% if @user==current_user %>
              <td><%= link_to 'Edit',edit_book_path(@book.id), class:"btn-success" %></td>
-             <td><%= link_to 'destroy',book_path(@book.id),method: :delete,"data-confirm" => "本当に削除しますか？",class:"btn-danger" %></td>
-            
+             <td><%= link_to 'Destroy',book_path(@book.id),method: :delete,"data-confirm" => "本当に削除しますか？",class:"btn-danger" %></td>
+             <% end %>
            </tr>
            
            

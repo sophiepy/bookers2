@@ -8,7 +8,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    #@bookが必要
+    if @user==current_user
+      render :edit
+    else
+      redirect_to user_path(current_user)
+    end
+  
     
   end
 
@@ -28,7 +33,7 @@ class UsersController < ApplicationController
     flash[:notice]="you have updated user successfully."
     redirect_to user_path(@user)
     else
-        @books =Book.all
+        # @books =Book.all
         render action: :edit
     end
   end
