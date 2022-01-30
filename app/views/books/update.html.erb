@@ -1,0 +1,11 @@
+<h1>Books#update</h1>
+
+ <% if @Book.errors.any? %>
+   <%= @Book.errors.count %>件のエラーが発生しました
+   <ul>
+     <% @Book.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+   </ul>
+ <% end %>
+

@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto rounded px-0 my-5">
+      <h2 class="text-dark py-4 mb-0">User info</h2>
+      <div class="form-body p-0">
+        <%= form_with model: @user, local: true do |f| %>
+            <label class="form_name">Name</label>
+            <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName", placeholder:"名前"%>
+          <label for="form_image">Image</label><br>
+          <%#= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class:"mb-3" %>
+          <div class="input-group my-3">
+            <label>
+            <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*",class:"w-100" %>  
+            </label>
+            <div class="form-group">
+          <label for="form_intoroduction">Introduction</label><br>
+          <%= f.text_area :introduction %>
+          </div>
+          </div>
+          <%= f.submit "Update User", class:"btn btn-lg btn-secondary mt-5" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--<p id="notice"></p>-->
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">-->
+<!--    <h2>User info</h2>-->
+<!--      <div class="form-group">-->
+        <%#= form_with model:@user, local:true do |f| %>
+<!--        <label for="user_name">Name</label>-->
+<!--        <input class="form-control name" type="text" value="ko" name="user[name]" id="user_name">-->
+<!--      </div>-->
+<!--     <div class="form-group">-->
+<!--        <label for="user_image">Image</label>-->
+        <!--下記の表記がわからない-->
+<!--        <input value="{}" data-reference="c6cf312858e178f03073759d4815a648" type="hidden" name="user[profile_image]"><input class="form-control-file user_image" data-reference="c6cf312858e178f03073759d4815a648" include_hidden="false" type="file" name="user[profile_image]" id="user_profile_image">-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="user_introduction">Introduction</label>-->
+        <!--<-%= f.text_area :body %>-->
+<!--        <textarea class="form-control introduction" name="user[introduction]" id="user_introduction"></textarea>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+          <!--<-%= f.submit 'update User'%>-->
+<!--        <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">-->
+        <!--Bookers1から引用-->
+        <%#= link_to "Show", book_path(@book.id) %>
+<!--        <%#= link_to "Back", books_path %>-->
+<!--      </div>-->
+<!--　 　</div>-->
+<!--　</div>-->
+<!--</div>-->
